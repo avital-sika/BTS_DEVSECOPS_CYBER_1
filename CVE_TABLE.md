@@ -11,4 +11,4 @@
 | **serialize-javascript: arbitrary code execution via deletefunctions** | **CVE-2020-7660** | `npm install serialize-javascript@latest` → **Version fixe: 3.1.0** | **HIGH** | **A03:2021-Injection** | Log `trivy` ou `npm audit` propre, **Log `npm install serialize-javascript@latest`** |
 | serialize-javascript: XSS via unsafe characters | CVE-2019-16769 | `npm install serialize-javascript@latest` → **Version fixe: 2.1.1** | MEDIUM | A03:2021-Injection (XSS) | Log `trivy` ou `npm audit` propre |
 | **Secrets dans Git (.env, private-node.pem)** | **Advisory interne / Gitleaks** | `git rm --cached private-node.pem`; Ajout dans `.gitignore` | **CRITICAL** | A04:2021-Insecure Design | **`gitleaks` trouve 1 fuite**. `trivy` détecte `private-node.pem`. |
-| Workflow Snyk non authentifié | N/A | Ajout du token `SNYK_TOKEN` dans GitHub Actions | HIGH | A05:2021-Security Misconfiguration | Workflow CI vert, Snyk scan OK |
+| Workflow Snyk non authentifié | N/A | Ajout du token `SNYK_TOKEN` dans GitHub Actions | HIGH | A05:2021-Security Misconfiguration | Workflow CI vert, Snyk scan OK |  
