@@ -1,0 +1,14 @@
+## 🛡️ Tableau de Vulnérabilités (CVE Table) Complété
+
+| Nom de la vulnérabilité / secret | Identifiant CVE / Advisory | Correctif appliqué | Niveau de gravité | Correspondance OWASP Top-10 (2021) | Preuve de correction |
+|:--------------------------------|:---------------------------|:-------------------|:-----------------|:-----------------------------------|:-------------------|
+| **lodash: Command injection via template** | **CVE-2021-23337** | `npm install lodash@latest` → **Version fixe: 4.17.21** | **HIGH** | A03:2021-Injection | Log `trivy` ou `npm audit` propre, **Log `npm install lodash@latest`** |
+| lodash: ReDoS via toNumber, trim and trimEnd | CVE-2020-28500 | `npm install lodash@latest` → **Version fixe: 4.17.21** | MEDIUM | A09:2021-Improper Logging & Monitoring | Log `trivy` ou `npm audit` propre |
+| **node-forge: Improper Verification of Cryptographic Signature (plusieurs)** | **CVE-2022-24771**, **CVE-2022-24772**, **CVE-2022-24773** | `npm install node-forge@latest` → **Version fixe: 1.3.0** | **HIGH** | A05:2021-Security Misconfiguration ou A02:2021-Cryptographic Failures | Log `trivy` ou `npm audit` propre, **Log `npm install node-forge@latest`** |
+| node-forge: Open Redirect | CVE-2022-0122 | `npm install node-forge@latest` → **Version fixe: 1.0.0** | MEDIUM | A01:2021-Broken Access Control | Log `trivy` ou `npm audit` propre |
+| node-forge: Prototype Pollution (Debug API) | GHSA-5rrq-pxf6-6jx5 | `npm install node-forge@latest` → **Version fixe: 1.0.0** | LOW | A03:2021-Injection | Log `trivy` ou `npm audit` propre |
+| node-forge: URL parsing could lead to undesired behavior. | GHSA-gf8q-jrpm-jvxq | `npm install node-forge@latest` | MEDIUM | A03:2021-Injection | Log `trivy` ou `npm audit` propre |
+| **serialize-javascript: arbitrary code execution via deletefunctions** | **CVE-2020-7660** | `npm install serialize-javascript@latest` → **Version fixe: 3.1.0** | **HIGH** | **A03:2021-Injection** | Log `trivy` ou `npm audit` propre, **Log `npm install serialize-javascript@latest`** |
+| serialize-javascript: XSS via unsafe characters | CVE-2019-16769 | `npm install serialize-javascript@latest` → **Version fixe: 2.1.1** | MEDIUM | A03:2021-Injection (XSS) | Log `trivy` ou `npm audit` propre |
+| **Secrets dans Git (.env, private-node.pem)** | **Advisory interne / Gitleaks** | `git rm --cached private-node.pem`; Ajout dans `.gitignore` | **CRITICAL** | A04:2021-Insecure Design | **`gitleaks` trouve 1 fuite**. `trivy` détecte `private-node.pem`. |
+| Workflow Snyk non authentifié | N/A | Ajout du token `SNYK_TOKEN` dans GitHub Actions | HIGH | A05:2021-Security Misconfiguration | Workflow CI vert, Snyk scan OK |
