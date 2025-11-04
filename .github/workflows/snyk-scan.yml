@@ -7,7 +7,7 @@ on:
     branches:
       - fix/security-avital
 
-jobs:
+jobs: 
   snyk:
     runs-on: ubuntu-latest
 
